@@ -55,10 +55,23 @@ export default class App extends Component {
 	</Card>
 	);
   }
+
+renderNoMoreCards() {
+return (
+<Card title="All Done" > 
+   <Text style={{marginBottom: 10}}>
+	There is no more content!
+   </Text>
+    <Button backgroundColor="#03A9F"
+	title="Get More"
+	/>
+</Card>
+);
+}
   render () {
     return (
       <ScrollView style={{flex: 1}} >
-        <Deck data={DATA} renderCard={this.renderCard} />
+        <Deck data={DATA} renderCard={this.renderCard} renderNoMoreCards={this.renderNoMoreCards} />
       </ScrollView>
     )
   }
